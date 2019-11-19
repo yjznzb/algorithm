@@ -9,8 +9,9 @@ public class SortMain {
             a[i] = r.nextInt(1000);
         }
         printArray(a);
-        MergeSort ms = new MergeSort();
-        ms.sort(a, 0, 999);
+        //MergeSort ms = new MergeSort();
+        QuickSort qs = new QuickSort();
+        qs.sort(a, 0, 999);
         printArray(a);
     }
 
