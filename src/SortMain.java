@@ -12,8 +12,10 @@ public class SortMain {
         //MergeSort ms = new MergeSort();
         //QuickSort qs = new QuickSort();
         //qs.sort(a, 0, 999);
-        CountingSort cs = new CountingSort();
-        cs.sort(a);
+        //CountingSort cs = new CountingSort();
+        //cs.sort(a);
+        InertionSort is = new InertionSort();
+        is.sort(a);
         printArray(a);
     }
 
