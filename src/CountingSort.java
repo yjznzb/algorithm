@@ -5,18 +5,14 @@ public class CountingSort {
         if (1 >= length) {
             return;
         }
-        int min = a[0];
         int max = a[0];
         for (int i = 0; i < length; i++) {
-            if (min > a[i]) {
-                min = a[i];
-            }
             if (max < a[i]) {
                 max = a[i];
             }
         }
 
-        int[] c = new int[max - min + 1];
+        int[] c = new int[max + 1];
         for (int i = 0; i < length; i++) {
             c[a[i]]++;
         }
