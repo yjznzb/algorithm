@@ -3,23 +3,12 @@ import java.util.Random;
 public class SortMain {
 
     public static void main (String[] args) {
-        int[] a = new int[1000];
-        Random r = new Random(1);
-        for (int i = 0; i < 1000; i++) {
-            a[i] = r.nextInt(10000);
-        }
-        printArray(a);
-        //MergeSort ms = new MergeSort();
-        QuickSort qs = new QuickSort();
-        qs.sort(a, 0, 999);
-        //CountingSort cs = new CountingSort();
-        //cs.sort(a);
-//        InertionSort is = new InertionSort();
-//        is.sort(a);
-        BinarySearch bs = new BinarySearch();
-        System.out.println(bs.searchFirstGreater(a,56));
-        System.out.println(bs.searchLastSmaller(a, 15));
-        printArray(a);
+        int[] a = {3, 9, 20, 15, 7};
+        int[] b = {9, 3, 15, 20, 7};
+        int[] tmp = new int[2];
+        System.arraycopy(b, 1, tmp, 0, 2);
+        BinaryTree tree = new BinaryTree();
+        BinaryTree.TreeNode root = tree.buildTree(a, b);
     }
 
     public static void printArray(int[] a) {
