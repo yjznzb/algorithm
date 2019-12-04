@@ -98,6 +98,9 @@ public class BinaryTree {
         return 1 + (lh > rh ? lh : rh);
     }
 
+    /**
+     * 树的节点
+     */
     public class TreeNode {
         int val;
         TreeNode left;
