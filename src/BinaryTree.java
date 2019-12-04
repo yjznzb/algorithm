@@ -51,6 +51,53 @@ public class BinaryTree {
         return root;
     }
 
+    /**
+     * 判断一棵二叉树是不是二叉查找树
+     * @param root
+     * @return
+     */
+    public boolean isValidBST(TreeNode root) {
+        return valid(root, null, null);
+    }
+
+    private boolean valid(TreeNode root, Integer min, Integer max) {
+        if (root == null) {
+            return true;
+        }
+
+        int val = root.val;
+        if (min != null && val <= min) {
+            return false;
+        }
+        if (max != null && val >= max) {
+            return false;
+        }
+
+        if (!valid(root.left, min, val)) {
+            return false;
+        }
+        if (!valid(root.right, val, max)) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * 求一颗二叉树的最大深度
+     * @param root
+     * @return
+     */
+    public int maxDepth(TreeNode root) {
+        if (null == root) {
+            return 0;
+        }
+        int lh = maxDepth(root.left);
+        int rh = maxDepth(root.right);
+
+        return 1 + (lh > rh ? lh : rh);
+    }
+
     public class TreeNode {
         int val;
         TreeNode left;
