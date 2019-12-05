@@ -99,6 +99,33 @@ public class BinaryTree {
     }
 
     /**
+     * 按层级遍历二叉树
+     * @param root
+     * @return
+     */
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        doLevelOrder(root, 0, result);
+        return result;
+    }
+
+    private void doLevelOrder(TreeNode node, int level, List<List<Integer>> result) {
+        if (node == null) {
+            return;
+        }
+        if (result.size() == level) {
+            result.add(new ArrayList<>());
+        }
+        result.get(level).add(node.val);
+        if (node.left != null) {
+            doLevelOrder(node.left, level + 1, result);
+        }
+        if (node.right != null) {
+            doLevelOrder(node.right, level + 1, result);
+        }
+    }
+
+    /**
      * 树的节点
      */
     public class TreeNode {
